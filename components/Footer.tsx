@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="flex items-center gap-3 group min-w-0" aria-label={`${SITE.name} home`}>
               {/* Logo Image */}
-              <div className="relative w-50 h-50  sm:w-50">
+              <div className="relative w-50 h-10  sm:w-50">
                 <Image
                   src="/images/logo.png" // Change extension if it's .svg, .jpg, etc.
                   alt={`${SITE.name} logo`}
