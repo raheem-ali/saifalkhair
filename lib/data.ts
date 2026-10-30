@@ -3,8 +3,8 @@ export const SITE = {
   legal: "General Contracting Estb.",
   arabic: "مؤسسة سيف الخير للمقاولات العامة",
   email: "Operations@alfalakb.com", // change to your real email
-  address: "King Abdulaziz Road, Taebah District, 3107, Jubail, Eastern Region, Saudi Arabia 35817",
-  shortLocation: "Jubail, Eastern Region, Saudi Arabia",
+  address: "Saudi Arabia ",
+  shortLocation: "Saudi Arabia",
   hours: "Sun – Thu, 8:00 AM – 6:00 PM",
 };
 
@@ -33,17 +33,17 @@ export interface Service {
 }
 
 const IMG = (id: string, w = 1200) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+  `${id}`;
 
 export const IMAGES = {
-  crane: IMG("photo-1578575437130-527eed3abbec"),
-  excavator: IMG("photo-1504307651254-35680f356dfd"),
-  workers: IMG("photo-1581092160607-ee22621dd758"),
-  construction: IMG("photo-1503387762-592deb58ef4e"),
-  electrical: IMG("photo-1581092162384-8987c1d64718"),
-  steel: IMG("photo-1581092335397-9583fe92d232"),
-  plant: IMG("photo-1518709268805-4e9042af9f23"),
-  site: IMG("photo-1541888946425-d0fbb186a5b3"),
+  crane: IMG("https://worldwidemachinery.com/wp-content/uploads/2022/09/heavy-equipment-rental-.jpeg"),
+  excavator: IMG("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbyQWvGPVkMfc2EROSmpPpkRDQB78OY2VmPyr4AW8iL-sMZ2_3ogoWODA&s=10"),
+  workers: IMG("https://media.licdn.com/dms/image/v2/D5612AQHW0EU6nB29Ng/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1713356284845?e=2147483647&v=beta&t=nc9BypCK2ML2Pq8iKLSpi1BOjogGhz6Och9BBU_IwX8"),
+  construction: IMG("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1H3w48wFixhhp_cOPpPZ76q14Wd2ITkEdjDC-JAgZD0Vj-EEsrypDV2Yi&s=10"),
+  electrical: IMG("https://www.vistaprojects.com/wp-content/uploads/2025/09/electrical-engineer-testing-circuits-with-multimeter-scaled.jpg"),
+  steel: IMG("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu1pDtMWnqS6p-0LZOCF-WtZ78FlQYJ2iyt0WhVeuj1LQgxXRQY4Chp0w&s=10"),
+  plant: IMG("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtPaSAR-hF_naSn8o5PhSlW0Gc9mSb4_ct6-HNiKe8aDHBJ-L117UPf11w&s=10"),
+  site: IMG("https://images.squarespace-cdn.com/content/v1/5b13337fcef3726a6e1946e8/1565038038526-A55XBR0GDW28ONNUB5WK/IMG_6560.JPG"),
 };
 
 export const SERVICES: Service[] = [
@@ -203,12 +203,12 @@ export const SAFETY_POINTS = [
 ];
 
 export const EQUIPMENT = [
-  { name: "Telescopic Mobile Cranes", arabic: "رافعات متحركة", category: "Cranes", image: IMG("photo-1578575437130-527eed3abbec", 700) },
-  { name: "Heavy-Duty Excavators", arabic: "حفارات ثقيلة", category: "Earthmoving", image: IMG("photo-1504307651254-35680f356dfd", 700) },
-  { name: "Crawler Cranes", arabic: "رافعات مجنزرة", category: "Cranes", image: IMG("photo-1581092160607-ee22621dd758", 700) },
-  { name: "Industrial Power Generators", arabic: "مولدات كهرباء صناعية", category: "Power", image: IMG("photo-1581092162384-8987c1d64718", 700) },
-  { name: "Lowbed Transport Trailers", arabic: "مقطورات نقل ثقيل", category: "Transport", image: IMG("photo-1581092335397-9583fe92d232", 700) },
-  { name: "Wheel Loaders", arabic: "شيولات", category: "Earthmoving", image: IMG("photo-1503387762-592deb58ef4e", 700) },
+  { name: "Telescopic Mobile Cranes", arabic: "رافعات متحركة", category: "Cranes", image: IMG("https://www-assets.liebherr.com/media/bu-media/lhbu-lwe/images/mobile-cranes/ltf-truck-mounted-telescopic-crane/liebherr-ltf1045-4-1-man-960x650_w1280.jpg", 700) },
+  { name: "Heavy-Duty Excavators", arabic: "حفارات ثقيلة", category: "Earthmoving", image: IMG("https://images.unsplash.com/photo-1504307651254-35680f356dfd", 700) },
+  { name: "Crawler Cranes", arabic: "رافعات مجنزرة", category: "Cranes", image: IMG("https://images.unsplash.com/photo-1581092160607-ee22621dd758", 700) },
+  { name: "Industrial Power Generators", arabic: "مولدات كهرباء صناعية", category: "Power", image: IMG("https://images.unsplash.com/photo-1581092162384-8987c1d64718", 700) },
+  { name: "Lowbed Transport Trailers", arabic: "مقطورات نقل ثقيل", category: "Transport", image: IMG("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6Dcn12GfDfiOWXHChOYksuHHoSTe-gvRkNoU23YeIue6RcWOkqQKXcJ6I&s=10", 700) },
+  { name: "Wheel Loaders", arabic: "شيولات", category: "Earthmoving", image: IMG("https://images.unsplash.com/photo-1503387762-592deb58ef4e", 700) },
 ];
 
 export const PROJECTS = [

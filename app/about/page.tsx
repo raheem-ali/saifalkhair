@@ -35,7 +35,7 @@ export default function AboutPage() {
               </p>
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={IMAGES.site} alt="Our teams on site" loading="lazy" className="w-full h-72 sm:h-96 object-cover rounded-2xl shadow-xl" />
+            <img src="https://statics.shale24.com/2026/04/crop/69d46b49f375b__1100x578.webp" alt="Our teams on site" loading="lazy" className="w-full h-72 sm:h-96 object-cover rounded-2xl shadow-xl" />
           </div>
           <div className="mt-14 sm:mt-20"><StatsGrid /></div>
         </Container>

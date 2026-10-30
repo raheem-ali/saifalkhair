@@ -47,7 +47,7 @@ export default function HomePage() {
 
             <div className="lg:col-span-5 lg:order-1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={IMAGES.site} alt="Industrial construction site" loading="lazy" className="w-full h-72 sm:h-96 lg:h-[520px] object-cover rounded-2xl shadow-xl border border-slate-200" />
+              <img src="https://statics.shale24.com/2026/04/crop/69d46b49f375b__1100x578.webp" alt="Industrial construction site" loading="lazy" className="w-full h-72 sm:h-96 lg:h-[520px] object-cover rounded-2xl shadow-xl border border-slate-200" />
             </div>
           </div>
 
