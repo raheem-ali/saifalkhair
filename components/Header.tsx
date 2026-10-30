@@ -14,7 +14,15 @@ export default function Header() {
   const pathname = usePathname();
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => { setOpen(false); setDd(false); setMSvc(false); }, [pathname]);
+  // Close menus when the route changes (done during render, not in an effect)
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setOpen(false);
+    setDd(false);
+    setMSvc(false);
+  }
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
