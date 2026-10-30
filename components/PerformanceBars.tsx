@@ -1,19 +1,33 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { METRICS } from "@/lib/data";
 
 const R = 52;
 const C = 2 * Math.PI * R;
+const REDUCED_QUERY = "(prefers-reduced-motion: reduce)";
+
+// Reads the reduced-motion preference without setting state inside an effect.
+function useReducedMotion() {
+  return useSyncExternalStore(
+    (onChange) => {
+      const mq = window.matchMedia(REDUCED_QUERY);
+      mq.addEventListener("change", onChange);
+      return () => mq.removeEventListener("change", onChange);
+    },
+    () => window.matchMedia(REDUCED_QUERY).matches,
+    () => false // server snapshot
+  );
+}
 
 function Ring({ value, label, show, delay }: { value: number; label: string; show: boolean; delay: number }) {
   const [n, setN] = useState(0);
+  const reduced = useReducedMotion();
 
-  // count-up number
+  // count-up number (skipped entirely when reduced motion is on)
   useEffect(() => {
-    if (!show) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setN(value); return; }
+    if (!show || reduced) return;
     let raf = 0;
     const dur = 1600;
     const start = performance.now() + delay;
@@ -24,7 +38,10 @@ function Ring({ value, label, show, delay }: { value: number; label: string; sho
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [show, value, delay]);
+  }, [show, reduced, value, delay]);
+
+  // with reduced motion, show the final value immediately
+  const display = reduced && show ? value : n;
 
   return (
     <div className="group h-full rounded-2xl bg-white/[0.06] border border-white/10 p-5 sm:p-7 text-center backdrop-blur-sm hover:bg-white/10 hover:border-[#00C2FF]/40 transition-colors">
@@ -42,7 +59,7 @@ function Ring({ value, label, show, delay }: { value: number; label: string; sho
           />
         </svg>
         <span className="absolute inset-0 flex items-center justify-center text-xl sm:text-3xl font-black text-white tabular-nums">
-          {n}<span className="text-[#00C2FF] text-base sm:text-xl ml-0.5">%</span>
+          {display}<span className="text-[#00C2FF] text-base sm:text-xl ml-0.5">%</span>
         </span>
       </div>
       <div className="mt-4 sm:mt-5 text-sm sm:text-base font-semibold text-white leading-snug">{label}</div>
