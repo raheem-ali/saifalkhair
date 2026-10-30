@@ -2,7 +2,7 @@ export const SITE = {
   name: "Saif Al Khair",
   legal: "General Contracting Estb.",
   arabic: "مؤسسة سيف الخير للمقاولات العامة",
-  email: "Operations@alfalakb.com", // change to your real email
+  email: "info@saifalkhair.com", // change to your real email
   address: "Saudi Arabia ",
   shortLocation: "Saudi Arabia",
   hours: "Sun – Thu, 8:00 AM – 6:00 PM",
