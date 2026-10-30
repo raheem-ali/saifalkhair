@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-800 mt-12 pt-6 text-xs text-slate-500 text-center sm:text-left">
-          © 2026 {SITE.name} {SITE.legal} All rights reserved.
+          © 2026 SaifalKhair All rights reserved.
         </div>
       </div>
     </footer>
