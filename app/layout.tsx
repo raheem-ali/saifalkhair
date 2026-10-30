@@ -3,6 +3,7 @@ import { Inter, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import RevealObserver from "@/components/RevealObserver";
 import { SITE } from "@/lib/data";
 
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <Footer />
+        <RevealObserver />
       </body>
     </html>
   );

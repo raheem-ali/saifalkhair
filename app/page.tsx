@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import HeroSlider from "@/components/HeroSlider";
 import PartnersGrid from "@/components/PartnersGrid";
+import PerformanceBars from "@/components/PerformanceBars";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import { Container, CTABanner, Industries, SafetyQuality, StatsGrid, WhyUs, sectionPad } from "@/components/Sections";
@@ -54,17 +55,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <WhyUs />
 
-      {/* PARTNERS */}
-      <section className={`${sectionPad} bg-[#F8FAFC] border-b border-slate-200`}>
-        <Container>
-          <SectionHeading eyebrow="Collaborators in growth" title="Trusted within the Kingdom's industrial ecosystem" description="We work alongside leading operators, EPC contractors and industrial developers across Saudi Arabia." center />
-          <PartnersGrid />
-        </Container>
-      </section>
-
-      {/* SERVICES */}
+    {/* SERVICES */}
       <section className={`${sectionPad} bg-white`}>
         <Container>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-5">
@@ -79,6 +71,19 @@ export default function HomePage() {
         </Container>
       </section>
 
+
+      {/* PARTNERS */}
+      <section className={`${sectionPad} bg-[#F8FAFC] border-b border-slate-200`}>
+        <Container>
+          <SectionHeading eyebrow="Collaborators in growth" title="Trusted within the Kingdom's industrial ecosystem" description="We work alongside leading operators, EPC contractors and industrial developers across Saudi Arabia." center />
+          <PartnersGrid />
+        </Container>
+      </section>
+
+
+
+
+      
       {/* FLEET */}
       <section className={`${sectionPad} bg-slate-900 text-white`}>
         <Container>
@@ -106,6 +111,14 @@ export default function HomePage() {
         </Container>
       </section>
 
+
+      
+      <WhyUs />
+
+
+  
+
+
       <SafetyQuality />
 
       {/* PROJECTS */}
@@ -130,6 +143,7 @@ export default function HomePage() {
         </Container>
       </section>
 
+      <PerformanceBars />
       <Industries />
       <CTABanner />
     </>

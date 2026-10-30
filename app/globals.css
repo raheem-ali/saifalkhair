@@ -3,7 +3,35 @@
 html { scroll-behavior: smooth; }
 body { font-family: var(--font-sans), system-ui, sans-serif; color: #0f172a; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 .font-arabic { font-family: var(--font-arabic), system-ui, sans-serif; }
+
+/* ---------- Keyframes ---------- */
+@keyframes fadeUp   { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+.animate-menu { animation: fadeDown 0.25s ease-out both; }
+
+/* ---------- Hero / page-hero load animation (staggered) ---------- */
+.hero-active .hero-content > * { animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.hero-active .hero-content > :nth-child(2) { animation-delay: 0.12s; }
+.hero-active .hero-content > :nth-child(3) { animation-delay: 0.24s; }
+.hero-active .hero-content > :nth-child(4) { animation-delay: 0.36s; }
+.hero-active .hero-content > :nth-child(5) { animation-delay: 0.48s; }
+
+/* ---------- Scroll fade-in for every section on every page ---------- */
+main section:not([data-no-reveal]) .max-w-\[1320px\] > :not([class*="grid-cols"]),
+main section:not([data-no-reveal]) [class*="grid-cols"] > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+main section:not([data-no-reveal]) [data-in][data-in] {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-delay: 0s !important; }
 }

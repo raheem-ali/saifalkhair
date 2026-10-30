@@ -15,13 +15,13 @@ export default function HeroSlider() {
   const go = (d: number) => setActive((p) => (p + d + SLIDES.length) % SLIDES.length);
 
   return (
-    <section className="relative bg-[#0F172A] text-white overflow-hidden min-h-[560px] sm:min-h-[600px] lg:min-h-[660px]">
+    <section data-no-reveal className="relative bg-[#0F172A] text-white overflow-hidden min-h-[560px] sm:min-h-[600px] lg:min-h-[660px]">
       {SLIDES.map((s, i) => (
-        <div key={s.id} aria-hidden={i !== active} className={`absolute inset-0 transition-opacity duration-1000 ${i === active ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"}`}>
+        <div key={s.id} aria-hidden={i !== active} className={`absolute inset-0 transition-opacity duration-1000 ${i === active ? "hero-active opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"}`}>
           <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${s.image})` }} />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A]/95 via-[#191C5C]/80 to-black/40" />
           <div className="relative z-20 max-w-[1320px] mx-auto px-4 sm:px-6 h-full flex items-center pt-12 pb-28 sm:py-20">
-            <div className="max-w-3xl space-y-5 sm:space-y-6">
+            <div className="hero-content max-w-3xl space-y-5 sm:space-y-6">
               <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#00C2FF] text-[11px] sm:text-xs font-bold tracking-wider uppercase">
                 <Sparkles className="w-3.5 h-3.5 shrink-0" /> {s.badge}
               </div>

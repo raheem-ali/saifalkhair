@@ -229,3 +229,11 @@ export const PROCESS = [
   { title: "Mobilisation", desc: "Certified crews, equipment and permits arrive on site ready to start." },
   { title: "Delivery and close-out", desc: "Daily reporting, inspection hold points and a complete close-out pack." },
 ];
+
+// Edit these values to your real figures
+export const METRICS = [
+  { label: "Project Completion Rate", value: 100 },
+  { label: "Client Satisfaction", value: 98 },
+  { label: "Safety Compliance", value: 100 },
+  { label: "Equipment Availability", value: 95 },
+];

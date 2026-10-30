@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import PartnersGrid from "@/components/PartnersGrid";
+import PerformanceBars from "@/components/PerformanceBars";
 import { Container, CTABanner, Industries, SafetyQuality, StatsGrid, WhyUs, sectionPad } from "@/components/Sections";
 import { IMAGES, SITE, TRADES } from "@/lib/data";
 
@@ -52,6 +53,7 @@ export default function AboutPage() {
       </section>
 
       <SafetyQuality />
+      <PerformanceBars />
       <Industries />
 
       <section className={`${sectionPad} bg-[#F8FAFC] border-y border-slate-200`}>
