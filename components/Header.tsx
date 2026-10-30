@@ -39,8 +39,8 @@ export default function Header() {
       <div className="hidden md:block bg-[#191C5C] text-slate-300 text-xs py-2.5 px-6">
         <div className="max-w-[1320px] mx-auto flex items-center justify-between gap-4">
           <div className="flex items-center gap-6">
-            <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 hover:text-[#00C2FF] transition-colors">
-              <Mail className="w-3.5 h-3.5 text-[#00C2FF]" /> {SITE.email}
+            <a href={`mailto:info@saifalkhair.com`} className="flex items-center gap-2 hover:text-[#00C2FF] transition-colors">
+              <Mail className="w-3.5 h-3.5 text-[#00C2FF]" /> info@saifalkhair.com
             </a>
             <span className="hidden lg:flex items-center gap-2"><MapPin className="w-3.5 h-3.5 text-[#00C2FF]" /> {SITE.shortLocation}</span>
           </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin, Clock } from "lucide-react";
 import Logo from "./Logo";
+import Image from "next/image";
 import { NAV, SERVICES, SITE } from "@/lib/data";
 
 export default function Footer() {
@@ -9,7 +10,18 @@ export default function Footer() {
       <div className="max-w-[1320px] mx-auto px-4 sm:px-6 py-14 sm:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           <div className="lg:col-span-4 space-y-4">
-            <Logo light />
+            <Link href="/" className="flex items-center gap-3 group min-w-0" aria-label={`${SITE.name} home`}>
+              {/* Logo Image */}
+              <div className="relative w-50  sm:w-50">
+                <Image
+                  src="/images/logo.png" // Change extension if it's .svg, .jpg, etc.
+                  alt={`${SITE.name} logo`}
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </Link>
             <p className="font-arabic leading-loose max-w-sm" dir="rtl" style={{ textAlign: "left" }}>
               حلول متكاملة في الإنشاءات الصناعية والصيانة والمعدات والكوادر الفنية في المملكة العربية السعودية.
             </p>
